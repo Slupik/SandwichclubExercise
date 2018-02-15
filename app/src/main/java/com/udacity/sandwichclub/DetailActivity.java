@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,15 +26,23 @@ public class DetailActivity extends AppCompatActivity {
 
     @BindView(R.id.also_known_tv)
     TextView tvAlsoKnow;
+    @BindView(R.id.also_known_label_tv)
+    TextView tvAlsoKnowLbl;
 
     @BindView(R.id.ingredients_tv)
     TextView tvIngredients;
+    @BindView(R.id.ingredients_label_tv)
+    TextView tvIngredientsLbl;
 
     @BindView(R.id.origin_tv)
     TextView tvOrigin;
+    @BindView(R.id.origin_label_tv)
+    TextView tvOriginLbl;
 
     @BindView(R.id.description_tv)
     TextView tvDescription;
+    @BindView(R.id.description_label_tv)
+    TextView tvDescriptionLbl;
 
     @BindView(R.id.image_iv)
     ImageView ivSandwichImage;
@@ -92,10 +101,21 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich sandwich) {
-        tvDescription.setText(sandwich.getDescription());
-        tvOrigin.setText(sandwich.getPlaceOfOrigin());
-        tvAlsoKnow.setText(getAltNamesText(sandwich));
-        tvIngredients.setText(getIngredientsList(sandwich));
+        setTextForField(sandwich.getDescription(), tvDescription, tvDescriptionLbl);
+        setTextForField(sandwich.getPlaceOfOrigin(), tvOrigin, tvOriginLbl);
+        setTextForField(getAltNamesText(sandwich), tvAlsoKnow, tvAlsoKnowLbl);
+        setTextForField(getIngredientsList(sandwich), tvIngredients, tvIngredientsLbl);
+    }
+
+    private void setTextForField(String text, TextView field, TextView label) {
+        if(text.length()>0) {
+            field.setText(text);
+            field.setVisibility(View.VISIBLE);
+            label.setVisibility(View.VISIBLE);
+        } else {
+            field.setVisibility(View.GONE);
+            label.setVisibility(View.GONE);
+        }
     }
 
     private String getAltNamesText(Sandwich sandwich) {
