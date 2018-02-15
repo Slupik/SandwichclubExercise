@@ -13,6 +13,7 @@
     <!-- Error messages-->
     <string name="detail_error_message_data_not_avaible">Sandwich data not available</string>
     <string name="detail_error_message_invalid_data">Selected sandwich isn\'t properly described</string>
+    <string name="check_internet_connection">Cannot download image, check internet connection</string>
 
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>
