@@ -26,8 +26,6 @@ public class DetailActivity extends AppCompatActivity {
 
     @BindView(R.id.also_known_tv)
     TextView tvAlsoKnow;
-    @BindView(R.id.also_known_label_tv)
-    TextView tvAlsoKnowLbl;
 
     @BindView(R.id.ingredients_tv)
     TextView tvIngredients;
@@ -103,7 +101,7 @@ public class DetailActivity extends AppCompatActivity {
     private void populateUI(Sandwich sandwich) {
         setTextForField(sandwich.getDescription(), tvDescription, tvDescriptionLbl);
         setTextForField(sandwich.getPlaceOfOrigin(), tvOrigin, tvOriginLbl);
-        setTextForField(getAltNamesText(sandwich), tvAlsoKnow, tvAlsoKnowLbl);
+        setTextForField(getAltNamesText(sandwich), tvAlsoKnow, null);
         setTextForField(getIngredientsList(sandwich), tvIngredients, tvIngredientsLbl);
     }
 
@@ -111,9 +109,11 @@ public class DetailActivity extends AppCompatActivity {
         if(text.length()>0) {
             field.setText(text);
             field.setVisibility(View.VISIBLE);
+            if(label!=null)
             label.setVisibility(View.VISIBLE);
         } else {
             field.setVisibility(View.GONE);
+            if(label!=null)
             label.setVisibility(View.GONE);
         }
     }
