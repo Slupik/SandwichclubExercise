@@ -1,7 +1,6 @@
 package com.udacity.sandwichclub;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -97,28 +96,6 @@ public class DetailActivity extends AppCompatActivity {
         tvOrigin.setText(sandwich.getPlaceOfOrigin());
         tvAlsoKnow.setText(getAltNamesText(sandwich));
         tvIngredients.setText(getIngredientsList(sandwich));
-        loadSandwichImage(sandwich);
-    }
-
-    private void loadSandwichImage(Sandwich sandwich) {
-        new ImageDownloaderTask()
-                .setCallback(new ImageDownloaderTask.Callback() {
-                            @Override
-                            public void downloadFinished(Bitmap bm, int statusCode) {
-                                if(bm!=null) {
-                                    ivSandwichImage.setImageBitmap(bm);
-                                }
-                            }
-
-                            @Override
-                            public void downloadFinished(Exception exception) {
-                                Toast.makeText(
-                                        DetailActivity.this,
-                                        getString(R.string.check_internet_connection),
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                .execute(sandwich.getDescription());
     }
 
     private String getAltNamesText(Sandwich sandwich) {
