@@ -1,14 +1,17 @@
-package com.udacity.sandwichclub;
+package com.udacity.sandwichclub.view.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import com.udacity.sandwichclub.R;
+import com.udacity.sandwichclub.view.detail.DetailActivity;
+import com.udacity.sandwichclub.view.mvp.view.BaseActivity;
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
