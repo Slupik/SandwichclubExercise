@@ -5,6 +5,7 @@
 
     <dimen name="text_size_sandwich_headline">24sp</dimen>
     <dimen name="text_size_sandwich_label">14sp</dimen>
+    <dimen name="text_size_sandwich_header_label">14sp</dimen>
     <dimen name="text_size_sandwich_normal_text">14sp</dimen>
     <dimen name="text_size_sandwich_header">24sp</dimen>
 </resources>

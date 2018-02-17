@@ -21,6 +21,8 @@ public class DetailActivity extends BaseActivity implements PresentedDetailView 
 
     @BindView(R.id.also_known_tv)
     TextView tvAlsoKnow;
+    @BindView(R.id.also_known_label_tv)
+    TextView tvAlsoKnowLbl;
 
     @BindView(R.id.ingredients_tv)
     TextView tvIngredients;
@@ -70,7 +72,7 @@ public class DetailActivity extends BaseActivity implements PresentedDetailView 
 
     @Override
     public PresentedDetailView setAltNames(String altNames) {
-        setTextForField(altNames, tvAlsoKnow, null);
+        setTextForField(altNames, tvAlsoKnow, tvAlsoKnowLbl);
         return this;
     }
 

@@ -18,6 +18,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="AppSandwichHeaderLabel" parent="android:TextAppearance">
+        <item name="android:textSize">@dimen/text_size_sandwich_header_label</item>
+        <item name="android:textColor">@color/sandwich_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="AppSandwichNormalText" parent="android:TextAppearance">
         <item name="android:textSize">@dimen/text_size_sandwich_normal_text</item>
         <item name="android:textColor">@color/sandwich_text</item>

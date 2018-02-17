@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,25 +37,37 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/also_known_tv"
+                    android:id="@+id/also_known_label_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
+                    android:text="@string/detail_also_known_as_label"
+                    android:textAppearance="@style/AppSandwichHeaderLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/also_known_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
                     android:textAppearance="@style/AppSandwichHeadline"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/also_known_label_tv"
                     tools:text="Cool Burger, Black Burger"/>
 
                 <TextView
                     android:id="@+id/origin_label_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginLeft="16dp"
                     android:text="@string/detail_place_of_origin_label"
                     android:textAppearance="@style/AppSandwichLabel"
                     app:layout_constraintStart_toStartOf="parent"
@@ -65,9 +78,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginStart="8dp"
                     android:textAppearance="@style/AppSandwichNormalText"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/origin_label_tv"
@@ -78,9 +91,9 @@
                     android:id="@+id/ingredients_label_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginLeft="16dp"
                     android:text="@string/detail_ingredients_label"
                     android:textAppearance="@style/AppSandwichLabel"
                     app:layout_constraintStart_toStartOf="parent"
@@ -91,9 +104,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="8dp"
                     android:textAppearance="@style/AppSandwichNormalText"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/ingredients_label_tv"
@@ -113,10 +126,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/detail_description_label"
                 android:textAppearance="@style/AppSandwichHeadline"
                 app:layout_constraintEnd_toEndOf="parent"
