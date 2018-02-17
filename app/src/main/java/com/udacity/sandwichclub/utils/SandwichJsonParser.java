@@ -29,34 +29,34 @@ class SandwichJsonParser {
     }
 
     static List<String> getIngredients(JSONObject json) throws JSONException {
-        JSONArray altNames = json.getJSONArray("ingredients");
+        JSONArray altNames = json.optJSONArray("ingredients");
         return JsonUtils.jsonArrayToStringList(altNames);
     }
 
     static String getImageUrl(JSONObject json) throws JSONException {
-        return json.getString("image");
+        return json.optString("image");
     }
 
     static String getDescription(JSONObject json) throws JSONException {
-        return json.getString("description");
+        return json.optString("description");
     }
 
     static String getPlaceOfOrigin(JSONObject json) throws JSONException {
-        return json.getString("placeOfOrigin");
+        return json.optString("placeOfOrigin");
     }
 
     static List<String> getKnowAs(JSONObject json) throws JSONException {
         JSONObject nameSection = getNameSection(json);
-        JSONArray altNames = nameSection.getJSONArray("alsoKnownAs");
+        JSONArray altNames = nameSection.optJSONArray("alsoKnownAs");
         return JsonUtils.jsonArrayToStringList(altNames);
     }
 
     static String getMainName(JSONObject json) throws JSONException {
         JSONObject nameSection = getNameSection(json);
-        return nameSection.getString("mainName");
+        return nameSection.optString("mainName");
     }
 
     static JSONObject getNameSection(JSONObject json) throws JSONException {
-        return json.getJSONObject("name");
+        return json.optJSONObject("name");
     }
 }
